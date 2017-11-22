@@ -21,6 +21,8 @@ group :test do
   gem 'rack-test'
   gem 'rspec'
   gem 'capybara'
+  gem 'cucumber', '~> 2.4'
+  gem 'launchy'
 end
 
 group :test, :development do
