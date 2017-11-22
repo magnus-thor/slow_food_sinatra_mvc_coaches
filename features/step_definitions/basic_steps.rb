@@ -16,3 +16,12 @@ end
 Then(/^show me the page$/) do
   save_and_open_page
 end
+
+Then(/^I would like to see "([^"]*)"$/) do |content|
+  expect(page).to have_content content
+end
+
+Then(/^I would like to see "([^"]*)" with the price of "([^"]*)"$/) do |product_name, price|
+  expected_output = "#{product_name} - #{price}"
+  expect(page).to have_content expected_output
+end

@@ -1,1 +1,11 @@
 Welcome to my site!
+
+<% @products.each do |product| %>
+  <h1>
+    <%= "#{product.name} - #{product.price} kr" %>
+  </h1>
+  <p>
+    <%= product.description %>
+  </p>
+
+<% end %>
