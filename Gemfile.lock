@@ -68,8 +68,6 @@ GEM
       pry (~> 0.10)
     public_suffix (3.0.1)
     rack (2.0.3)
-    rack-flash3 (1.0.5)
-      rack
     rack-protection (2.0.0)
       rack
     rack-test (0.8.2)
@@ -104,6 +102,8 @@ GEM
       rack-protection (= 2.0.0)
       sinatra (= 2.0.0)
       tilt (>= 1.3, < 3)
+    sinatra-flash (0.3.0)
+      sinatra (>= 1.0.0)
     sinatra-redirect-with-flash (0.2.1)
       sinatra (>= 1.0.0)
     thread_safe (0.3.6)
@@ -128,7 +128,6 @@ DEPENDENCIES
   launchy
   pg
   pry-byebug
-  rack-flash3
   rack-test
   rake
   rspec
@@ -136,6 +135,7 @@ DEPENDENCIES
   shoulda-matchers
   sinatra
   sinatra-contrib
+  sinatra-flash
   sinatra-redirect-with-flash
 
 RUBY VERSION

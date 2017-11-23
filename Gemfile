@@ -8,7 +8,7 @@ gem 'pg'
 # Sinatra driver
 gem 'sinatra'
 gem 'sinatra-contrib'
-gem 'rack-flash3'
+gem 'sinatra-flash'
 gem 'sinatra-redirect-with-flash'
 
 gem 'activerecord'
