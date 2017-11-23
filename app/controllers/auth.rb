@@ -5,7 +5,7 @@ class SlowFoodApp
   end
 
   get '/login' do
-
+    erb :signin
   end
 
   get '/signup' do
@@ -28,6 +28,16 @@ class SlowFoodApp
       redirect '/signup', notice: error_message
     end
 
+  end
+
+  post '/signin' do
+    user = User.find_by(name: params['user']['name'])
+    if user.authenticate(params['user']['password'])
+      session[:user_id] = user.id
+      redirect '/', notice: "Welcome #{current_user.name}! You were successfully logged in."
+    else
+      redirect '/login', notice: 'Incorrect user name or password'
+    end
   end
 end
 

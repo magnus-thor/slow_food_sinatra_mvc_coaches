@@ -21,3 +21,17 @@ end
 Then(/^I should be on the registration page$/) do
   expect(current_path).to eq '/signup'
 end
+
+Given(/^the following users exist$/) do |table|
+  table.hashes.each do |user|
+    User.create!(user)
+  end
+end
+
+Given(/^I visit the sign in page$/) do
+  visit '/login'
+end
+
+Then(/^I should be on the sign in page$/) do
+  expect(current_path).to eq '/login'
+end
