@@ -1,15 +1,22 @@
 Welcome to my site!
 
 <% @categories.each do |category| %>
-  <section id="<%= category.titleize.gsub(' ', '').underscore %>">
+  <section id="<%= to_underscore(category) %>">
     <% @products.each do |product| %>
       <% if product.category == category %>
-        <h1>
-          <%= "#{product.name} - #{product.price} kr" %>
-        </h1>
-        <p>
-          <%= product.description %>
-        </p>
+        <div id="product-<%= product.id %>">
+          <h1>
+            <%= "#{product.name} - #{product.price} kr" %>
+          </h1>
+          <p>
+            <%= product.description %>
+          </p>
+          <form action="/order_create" method="post">
+            <input type="hidden" name="product_id" value="<%= product.id %>">
+            <input type="submit" value="Order">
+          </form>
+
+        </div>
 
       <% end %>
     <% end %>
