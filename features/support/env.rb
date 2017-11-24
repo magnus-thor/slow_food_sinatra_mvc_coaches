@@ -9,7 +9,7 @@ require 'database_cleaner'
 require 'database_cleaner/cucumber'
 require 'launchy'
 require 'faker'
-
+require 'timecop'
 
 Capybara.app = SlowFoodApp
 

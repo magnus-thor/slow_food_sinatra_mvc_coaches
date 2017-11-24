@@ -20,6 +20,7 @@ Feature: User can add product to order
       And I should see "Kebab was added to your order"
 
     Scenario: User can add a second product to the order
+      Given I visit the site
       Given there is an order with order item "Kebab"
       And I click "Order" on "Hamburger"
       Then I should see "Hamburger was added to your order"

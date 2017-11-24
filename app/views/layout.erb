@@ -30,6 +30,10 @@
       <% else %>
         <a href="/login">Login</a>
       <% end %>
+
+      <% if order %>
+        <a href="/checkout">Checkout</a>
+      <% end %>
   </header>
 
   <% flash.keys.each do |type| %>

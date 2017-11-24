@@ -10,4 +10,8 @@ class SlowFoodApp
     order_item = OrderItem.create(product: product, order: order)
     redirect '/', notice: "#{order_item.product.name} was added to your order"
   end
+
+  get '/checkout' do
+    erb :checkout
+  end
 end
