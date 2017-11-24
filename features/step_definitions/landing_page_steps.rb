@@ -9,10 +9,14 @@ Given(/^the following products exist$/) do |table|
   end
 end
 
-Then(/^I would like to see "([^"]*)" with the price of "([^"]*)" in "([^"]*)" section$/) do |product_name, price, section|
+Then(/^I should( not)? see "([^"]*)" with the price of "([^"]*)" in "([^"]*)" section$/) do |negate, product_name, price, section|
   expected_output = "#{product_name} - #{price}"
   section_name = section.titleize.gsub(' ', '').underscore
   within("section##{section_name}") do
-    expect(page).to have_content expected_output
+    if negate
+      expect(page).to_not have_content expected_output
+    else
+      expect(page).to have_content expected_output
+    end
   end
 end

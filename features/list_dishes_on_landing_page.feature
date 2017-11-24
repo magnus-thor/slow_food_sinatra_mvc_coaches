@@ -14,9 +14,11 @@ Feature: List dishes on landing page
 
   Scenario: Visitor see a list of dishes on the page
     When I visit the site
-    Then I would like to see "Pizza" with the price of "50 kr" in "Main course" section
+    Then I should see "Pizza" with the price of "50 kr" in "Main course" section
     And I would like to see "Great Pizza"
-    And I would like to see "Kebab" with the price of "75 kr" in "Main course" section
+    And I should see "Kebab" with the price of "75 kr" in "Main course" section
     And I would like to see "Great Kebab"
-    And I would like to see "Hamburger" with the price of "45 kr" in "Main course" section
+    And I should see "Hamburger" with the price of "45 kr" in "Main course" section
     And I would like to see "Great Hamburger"
+    And I should not see "Ice cream" with the price of "15" in "Main course" section
+    And I should not see "Salad" with the price of "15" in "Main course" section

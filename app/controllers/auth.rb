@@ -1,5 +1,6 @@
 class SlowFoodApp
   get '/' do
+    @categories = Product::VALID_CATEGORIES
     @products = Product.all
     erb :welcome
   end
