@@ -14,9 +14,18 @@ Feature: User can add product to order
 
     Scenario: User click "Order" on a product and creates an order
       Given I visit the site
-      Then show me the page
       And I click "Order" on "Kebab"
       Then there should be an order created for me
       And the order should contain "Kebab"
       And I should see "Kebab was added to your order"
+
+    Scenario: User can add a second product to the order
+      Given there is an order with order item "Kebab"
+      And I click "Order" on "Hamburger"
+      Then I should see "Hamburger was added to your order"
+      And the order should contain "Kebab"
+      And the order should contain "Hamburger"
+
+
+
       
