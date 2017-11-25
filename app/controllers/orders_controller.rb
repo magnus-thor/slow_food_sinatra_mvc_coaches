@@ -12,6 +12,14 @@ class SlowFoodApp
   end
 
   get '/checkout' do
+    @order = order
     erb :checkout
+  end
+
+  post '/finalize' do
+    order.update_attribute(:status, 'confirmed')
+    @pickup_time = pickup_time
+    session[:order_id] = nil
+    erb :finalized
   end
 end

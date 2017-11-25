@@ -31,3 +31,17 @@ end
 Then(/^I should be on the checkout page$/) do
   expect(current_path).to eq '/checkout'
 end
+
+
+Then(/^I should see (.*) and (.*) in the order$/) do |product_name, price|
+  #product = Product.find_by(name: product_name)
+  expected_output = "#{product_name} - #{price} kr"
+  within '#order-details' do
+    expect(page).to have_content expected_output
+  end
+end
+
+And(/^my order should be marked confirmed$/) do
+  @order.reload
+  expect(@order).to be_confirmed
+end
