@@ -19,7 +19,10 @@ class SlowFoodApp
   post '/finalize' do
     order.update_attribute(:status, 'confirmed')
     @pickup_time = pickup_time
+    # Send email to restaurant
+
     session[:order_id] = nil
+
     erb :finalized
   end
 end

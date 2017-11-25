@@ -1,25 +1,19 @@
 <div id="order-details">
   <% @order.order_items.each do |item| %>
-   <p>
-     <%= "#{item.product.name}  - #{item.product.price} kr" %>
-   </p>
+    <p>
+      <%= "#{item.product.name}  - #{item.product.price} kr" %>
+    </p>
   <% end %>
 
   <strong>
     Order total: <%= order.total %> kr
   </strong>
-  <% if @order.pending? %>
-    <p>
-      Estimated pickup time: <%= pickup_time %>
-    </p>
-    <form action="/finalize" method="post">
-      <input type="submit" value="Confirm order">
-    </form>
-  <% elsif @order.confirmed? %>
-    <p>
-      Confirmed pickup time: <%= pickup_time %>
-    </p>
-  <% end %>
+  <p>
+    Estimated pickup time: <%= pickup_time %>
+  </p>
+  <form action="/finalize" method="post">
+    <input type="submit" value="Confirm order">
+  </form>
 </div>
 
 
