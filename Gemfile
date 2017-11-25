@@ -19,6 +19,9 @@ gem 'rake'
 
 gem 'shotgun'
 
+gem 'faker'
+
+
 group :test do
   gem 'database_cleaner', '~> 1.4.1'
   gem 'rack-test'
@@ -31,7 +34,6 @@ end
 
 group :test, :development do
   gem 'factory_bot'
-  gem 'faker'
   gem 'pry-byebug'
   gem 'timecop'
 end
