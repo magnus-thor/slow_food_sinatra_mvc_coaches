@@ -1,13 +1,13 @@
-Welcome to my site!
-
+<h1 style="color: #a03020">Our menu</h1>
 <% @categories.each do |category| %>
   <section id="<%= to_underscore(category) %>">
+    <h3 style="color: #a03020"><%= category.pluralize %></h3>
     <% @products.each do |product| %>
       <% if product.category == category %>
         <div id="product-<%= product.id %>">
-          <h1>
+          <h5>
             <%= "#{product.name} - #{product.price} kr" %>
-          </h1>
+          </h5>
           <p>
             <%= product.description %>
           </p>
