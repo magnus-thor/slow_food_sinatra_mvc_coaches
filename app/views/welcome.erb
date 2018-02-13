@@ -1,7 +1,7 @@
-<h1 style="color: #a03020">Our menu</h1>
+<h1 style="color: #a03804">Awesome menu</h1>
 <% @categories.each do |category| %>
   <section id="<%= to_underscore(category) %>">
-    <h3 style="color: #a03020"><%= category.pluralize %></h3>
+    <h3 style="color: #a01204"><%= category.pluralize %></h3>
     <% @products.each do |product| %>
       <% if product.category == category %>
         <div id="product-<%= product.id %>">
